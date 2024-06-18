@@ -23,7 +23,7 @@ export default function Scene() {
         <OrthographicCamera
           position={[-1.81, 0.04, 1]}
           rotation={[0, 0, Math.PI / -2]}
-          zoom={1150}
+          zoom={900}
           near={0.01}
           far={10000}
           makeDefault
