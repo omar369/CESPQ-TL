@@ -8,7 +8,7 @@ export interface ModelProps {
   modelPath: string;
 }
 
-export const LuzBlanca: React.FC<ModelProps> = ({ modelPath }) => {
+export const PoliceLights: React.FC<ModelProps> = ({ modelPath }) => {
   const gltf = useLoader(GLTFLoader, modelPath, (loader) => {
     const dracoLoader = new DRACOLoader();
     dracoLoader.setDecoderPath(
