@@ -1,7 +1,7 @@
 // Card.tsx
 import React, { useRef, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { MeshStandardMaterial } from 'three';
+import * as THREE from 'three'; // Importar THREE
 import { Text } from '@react-three/drei';
 import { gsap } from 'gsap';
 
@@ -27,11 +27,13 @@ const Card: React.FC<CardProps> = ({
 
   const handlePointerDown = () => {
     setFlipped(!flipped);
-    gsap.to(cardRef.current?.rotation, {
-      y: flipped ? 0 : Math.PI,
-      duration: 1,
-      ease: 'power2.inOut',
-    });
+    if (cardRef.current) {
+      gsap.to(cardRef.current.rotation, {
+        y: flipped ? 0 : Math.PI,
+        duration: 1,
+        ease: 'power2.inOut',
+      });
+    }
   };
 
   useFrame(() => {
@@ -72,4 +74,4 @@ const CardScene: React.FC<CardProps> = (props) => {
   );
 };
 
-export default Card;
+export default CardScene;
