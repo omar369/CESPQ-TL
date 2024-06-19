@@ -10,7 +10,7 @@ const Lights: React.FC = React.memo(() => {
         angle={0.3}
         penumbra={1}
         intensity={0.8}
-        castShadow
+        castShadow={false}
       />
     </>
   );
