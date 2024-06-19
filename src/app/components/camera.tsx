@@ -47,6 +47,7 @@ const Camera: React.FC = React.memo(() => {
     };
   }, []);
 
+  // camera orthographic
   return (
     <OrthographicCamera
       ref={camera}
