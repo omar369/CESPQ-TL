@@ -8,7 +8,7 @@ const Camera: React.FC = React.memo(() => {
   const posX = -1.81;
   const posY = 0.04;
   const posZ = 1;
-  const camera = useRef<THREE.OrthographicCamera | undefined>();
+  const camera = useRef<THREE.OrthographicCamera>(null!);
 
   // INICIA DAT GUI
   useEffect(() => {
