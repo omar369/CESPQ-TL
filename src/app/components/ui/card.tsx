@@ -1,7 +1,7 @@
 // Card.tsx
 import React, { useRef, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import * as THREE from 'three'; // Importar THREE
+import * as THREE from 'three';
 import { Text } from '@react-three/drei';
 import { gsap } from 'gsap';
 
@@ -43,12 +43,7 @@ const Card: React.FC<CardProps> = ({
   });
 
   return (
-    <mesh
-      ref={cardRef}
-      onPointerDown={handlePointerDown}
-      onTouchStart={handlePointerDown}
-      position={position}
-    >
+    <mesh ref={cardRef} onPointerDown={handlePointerDown} position={position}>
       <boxGeometry args={[width, height, 0.01]} />
       <meshStandardMaterial metalness={metalness} roughness={roughness} />
       <Text
@@ -64,14 +59,4 @@ const Card: React.FC<CardProps> = ({
   );
 };
 
-const CardScene: React.FC<CardProps> = (props) => {
-  return (
-    <Canvas>
-      <ambientLight />
-      <pointLight position={[10, 10, 10]} />
-      <Card {...props} />
-    </Canvas>
-  );
-};
-
-export default CardScene;
+export default Card;
